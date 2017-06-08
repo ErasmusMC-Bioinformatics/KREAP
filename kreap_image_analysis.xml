@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<tool name="KREAP Image Analysis" id="galaxy_kreap_image_analysis" version="0.1">
+    <command interpreter="bash">
+kreap_image_analysis.sh "${index}" "${zip}" "${output}" "${output.files_path}"
+    </command>
+
+    <inputs>
+        <param name="index" type="data" label="Index file"/>
+        <param name="zip" type="data" label="Input zip"/>
+    </inputs>
+
+    <outputs>
+        <data format="html" name="output" label="KREAP on ${index.name} and ${zip.name}" />
+    </outputs>
+</tool>

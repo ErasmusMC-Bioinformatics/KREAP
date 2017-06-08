@@ -1,0 +1,80 @@
+<html>
+
+    <center>
+        <h1>
+            Use this as input for the "KREAP analysis" tool
+        </h1>
+        <h1>
+            {% if treatments %}
+                <a href='experiment/index.html'>Click here for the results</a>
+            {% else %}
+                <a href='plate/index.html'>Click here for the results</a>
+            {% endif %}
+        </h1>
+        <p>Tip: Open it in a new tab (middle mouse button or right mouse button -> 'open in new tab' on the link above)</p>
+        <h2>
+            Wells:
+        </h2>
+        <table border ='1'>
+            <thead>
+                <tr>
+                    <th>Well</th>
+                    <th>Mean Outside Growth</th>
+                    <th>Median Outside Growth</th>
+                    <th>STD Outside Growth</th>
+                    <th>Mean Inside Growth</th>
+                    <th>Median Inside Growth</th>
+                    <th>STD Inside Growth</th>
+                    <th>Image Count</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for well, data in wells.iteritems() %}
+                <tr>
+                    {% if treatments %}
+                        <td>{{ well }}</td>
+                    {% else %}
+                        <td><a href="plate/{{ well }}/index.html">{{ well }}</a></td>
+                    {% endif %}
+                    <td>{{ data.outside_growth.mean }}</td>
+                    <td>{{ data.outside_growth.median }}</td>
+                    <td>{{ data.outside_growth.sd }}</td>
+                    <td>{{ data.inside_growth.mean }}</td>
+                    <td>{{ data.inside_growth.median }}</td>
+                    <td>{{ data.inside_growth.sd }}</td>
+                    <td>{{ data.image.n }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        {% if treatments %}
+            <h2>
+                Treatment analysis:
+            </h2>
+            <table border='1'>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Wells</th>
+                        <th>Time Points</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for treatment in treatments %}
+                        <tr>
+                            <td><a href='experiment/{{ treatment.name }}/index.html'>{{ treatment.name }}</a></td>
+                            <td>{{ treatment.num_wells }}</td>
+                            <td>{{ treatment.time_points }}</td>
+                            <td>{{ errors[treatment.name] }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+        <p>
+            Analysis run on: {{ datetime }} <br />
+            <a href="log.html">Log</a>
+        </p>
+    </center>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<style>
+th, td {
+    border-bottom: 1px solid #ddd;
+    padding: 5px 30px 5px 30px;
+    text-align: left;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.hover_table tr:hover {
+    background-color: #DDD;
+}
+
+table .error {
+    background-color: #F7DFDE;
+}
+
+.hover_table .error:hover {
+    background-color: #F9C7C5;
+}
+
+table .low_r2 {
+	background-color: #FFDDBF;
+}
+
+.hover_table .low_r2:hover {
+	background-color: #FFCFA8;
+}
+
+html,body {    
+    height:100%;
+    margin: 0;
+}
+
+.div_on_top {
+    position: absolute; 
+    top: 10%;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 480px;
+    box-shadow: 10px 10px 5px #BBB;
+}
+
+.scroll_div {
+    overflow-y: auto;
+    height: 70%;
+}
+
+input[type=checkbox] {
+    display:none;
+}
+
+input[type=checkbox] + label
+{
+    border-radius: 15px;
+    background: #922;
+    height: 30px;
+    width: 40px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+}
+input[type=checkbox]:checked + label
+{
+    background: #292;
+    height: 30px;
+    width: 40px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+}
+
+#new_index_div {
+    position: absolute;
+    background-color: #FDFDFD;
+    width: 50%;
+    height: 500px;
+}
+
+#new_index_text_area {
+    width:100%;
+    height:100%; 
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    resize: none;
+}
+</style>
+<script>
+var show_well_plot = function(treatment, well){
+    $("#plot_div").attr("style", "");
+    $("#plot_img").attr("src", treatment + "/Infiltrating cells " + well + ".png");
+}
+
+wells = [];
+{% for well in wells %}
+    wells.push("{{ well['Well'] }}");
+{% endfor %}
+
+index_data = {};
+{% for well, row in index_data.iteritems() %}
+    index_data['{{ well }}'] = "{{ row }}";
+{% endfor %}
+
+var make_new_index = function(){
+    new_index_file = index_data["header"] + "\n";
+    for(var i = 0;i < wells.length;i++){
+        if($("[id='" + wells[i] + "_checkbox']")[0].checked){
+            new_index_file += index_data[wells[i]] + "\n";
+        }
+    }
+    $("#new_index_text_area").html(new_index_file);
+    $("#new_index_div").attr("style", "");
+}
+
+
+</script>
+</head>
+	<body>
+        <div id="plot_div" class="div_on_top" style="display: none;" onclick="$(this).attr('style', 'display: none;')">
+            <img id="plot_img" src="" />
+        </div>
+        <div id="new_index_div" class="div_on_top" style="display: none;">
+            <textarea rows="4" cols="50" id="new_index_text_area"></textarea>
+            <center>
+                <h2 onclick="$(this).parent().parent().attr('style', 'display: none;')" style="cursor: pointer;">Close</h2>
+            </center>
+        </div>
+        <div class="scroll_div">
+            <table class="hover_table">
+                <caption>
+                    <h2>Analysis Result:</h2>
+                </caption>
+                <thead>
+                    <tr>
+                        <th>Treatment</th>
+                        <th>Well</th>
+                        <th>Mu_m</th>
+                        <th>StdErr_Mu_m</th>
+                        <th>Lambda</th>
+                        <th>StdErr_Lambda</th>
+                        <th>A</th>
+                        <th>StdErr_A</th>
+                        <th>RMSE</th>
+                        <th>R2</th>
+                        <th class="new_index_file_control">Include</th>
+                    </tr>
+                </thead>
+                {% for well in wells %}
+                        {% if well["Mu_m"] != "NA" %}
+                        <tr class="{{ 'low_r2' if well["R2"]|float < 0.9 else '' }}">
+                            <th><a href="{{ well["Treatment"] }}/index.html">{{ well["Treatment"] }}</a></th>
+                            <th><a href="#/" tmp='{{ well["Treatment"] }}/Infiltrating cells {{ well["Well"] }}.png' onclick="show_well_plot('{{ well['Treatment'] }}', '{{ well['Well'] }}')">{{ well["Well"] }}</a></th>
+                            <th>{{ well["Mu_m"]|float|round(2) }}</th>
+                            <th>{{ well["StdErr_Mu_m"]|float|round(2) }}</th>
+                            <th>{{ well["Lambda"]|float|round(2) }}</th>
+                            <th>{{ well["StdErr_Lambda"]|float|round(2) }}</th>
+                            <th>{{ well["A"]|float|round(2) }}</th>
+                            <th>{{ well["StdErr_A"]|float|round(2) }}</th>
+                            <th>{{ well["RMSE"]|float|round(2) }}</th>
+                            <th>{{ well["R2"]|float|round(2) }}</th>
+                            <th class="new_index_file_control">
+                                <input name="{{ well['Well'] }}_checkbox" id="{{ well['Well'] }}_checkbox" type="checkbox" {{ '' if well["R2"]|float < 0.9 else 'checked="checked"' }} />
+                                    <label for="{{ well['Well'] }}_checkbox"></label>
+                            </th>
+                        </tr>
+                        {% else %}
+                        <tr class="error">
+                            <th><a href="{{ well["Treatment"] }}/index.html">{{ well["Treatment"] }}</a></th>
+                            <th><a href="#/" tmp='{{ well["Treatment"] }}/Infiltrating cells {{ well["Well"] }}.png' onclick="show_well_plot('{{ well['Treatment'] }}', '{{ well['Well'] }}')">{{ well["Well"] }}</a></th>
+                            <th>{{ well["Mu_m"] }}</th>
+                            <th>{{ well["StdErr_Mu_m"] }}</th>
+                            <th>{{ well["Lambda"] }}</th>
+                            <th>{{ well["StdErr_Lambda"] }}</th>
+                            <th>{{ well["A"] }}</th>
+                            <th>{{ well["StdErr_A"] }}</th>
+                            <th>{{ well["RMSE"] }}</th>
+                            <th>{{ well["R2"] }}</th>
+                            <th class="new_index_file_control">
+                                <input name="{{ well['Well'] }}_checkbox" id="{{ well['Well'] }}_checkbox" type="checkbox"/>
+                                    <label for="{{ well['Well'] }}_checkbox"></label>
+                            </th>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+            </table>
+        </div>
+		<a href="parameters.txt">Download parameter data</a><br />
+		<a href="simulations.txt">Download simulation data</a>
+		<a href="#/" onclick="make_new_index()">Make new index file</a>
+	</body>
+</html>

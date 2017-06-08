@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<tool name="KREAP Data Modeling" id="galaxy_kreap_data_modeling">
+	<description></description>
+	<command interpreter="bash">
+kreap_data_modeling.sh "$input" "$index" "$output" "${output.files_path}"
+	</command>
+	<inputs>
+        <param name="input" type="data" format="html" label="The KREAP tool output"/>
+        <param name="index" type="data" format="tabular" label="The index file"/>
+	</inputs>
+	<outputs>
+		<data format="html" name="output" label="KREAP analysis on ${input.name} and ${index.name}" />
+	</outputs>
+</tool>
+
