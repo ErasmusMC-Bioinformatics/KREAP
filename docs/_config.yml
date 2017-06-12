@@ -1,0 +1,28 @@
+theme: jekyll-theme-slate
+
+title : KREAP: 
+author :
+  name : David van Zessen
+  email : d.vanzessen@erasmusmc.nl
+  github : ErasmusMC-Bioinformatics
+
+production_url : http://ErasmusMC-Bioinformatics.github.io/kreap
+
+markdown: kramdown
+
+JB :
+  archive_path: nil
+  categories_path : nil
+  tags_path : nil
+  atom_path : nil
+  rss_path : nil
+  
+  comments :
+    provider : false
+
+  analytics :
+    provider : false
+
+  sharing :
+    provider : false
+
