@@ -4,12 +4,12 @@ Kinetic Re-Epithelialization Analysis Pipeline
 
 ## [](#header-2)Getting Started
 
-Download the VM from [https://bioinf-galaxian.erasmusmc.nl/owncloud/index.php/s/zNdnBvR1yWhXzT1/download](here)...
+Download the VM from [here](https://bioinf-galaxian.erasmusmc.nl/owncloud/index.php/s/zNdnBvR1yWhXzT1/download).
 
 ### [](#header-3)For Windows and Linux
 
-Install [https://my.vmware.com/en/web/vmware/free#desktop_end_user_computing/vmware_workstation_player/12_0](VMware Workstation Player)
+Install [VMware Workstation Player](https://my.vmware.com/en/web/vmware/free#desktop_end_user_computing/vmware_workstation_player/12_0)
 
 ### [](#header-3)For Mac
 
-Install [https://www.virtualbox.org/](VirtualBox)
+Install [VirtualBox](https://www.virtualbox.org/)
