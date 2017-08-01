@@ -59,3 +59,6 @@ Select the newly created KREAP entry and click on "Start" (green arrow) at the t
 Open up your favourite webbrowser and go to [127.0.0.1:8080](http://127.0.0.1:8080), you should see the KREAP Galaxy main page:  
 ![virtualbox setup 1](img/setup_kreap11.png) 
 
+# [](#header-1)Create a Plate zip and index  
+  
+Learn more about the Plate zip and index file that are used as inputs for KREAP [here](file_formats)

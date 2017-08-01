@@ -11,5 +11,6 @@ Set up Oracle [VirtualBox](https://www.virtualbox.org/) (Help: [Windows](virtual
 
 Follow the guide to import the KREAP VM into VirtualBox [here](setup_kreap).
 
-# [](#header-1)Run KREAP
-
+# [](#header-1)Create a Plate zip and index  
+  
+Learn more about the Plate zip and index file that are used as inputs for KREAP [here](file_formats).  
