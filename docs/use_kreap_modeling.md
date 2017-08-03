@@ -19,19 +19,19 @@ If you click on the "Click here for the results" link at the top of the result p
   
 The values are:  
 
-| Column Name   | Description                                                       |
-|---------------|-------------------------------------------------------------------|
-| Treatment     | The treatment this well is part off                               |
-| Well          | The well                                                          |
-| Mu_m          | placeholder                                                       |
-| StdErr_Mu_m   | placeholder                                                       |
-| Lambda        | placeholder                                                       |
-| StdErr_Lambda | placeholder                                                       |
-| A             | placeholder                                                       |
-| StdErr_A      | placeholder                                                       |
-| RMSE          | placeholder                                                       |
-| R2            | placeholder                                                       |
-| Include       | Should this well be included in a the newly generated index file? |
+| Column Name   | Description                                                      |
+|---------------|------------------------------------------------------------------|
+| Treatment     | Name of the treatment added to the well                          |
+| Well          | The well                                                         |
+| Mu_m          | Repair rate (cells/minute)                                       |
+| StdErr_Mu_m   | Standard error from the mean, Mu_m parameter                     |
+| Lambda        | Lag time or inflection point (minutes)                           |
+| StdErr_Lambda | Standard error from the mean, Lambda parameter                   |
+| A             | Maximum number of cells in the scratched area (cells)            |
+| StdErr_A      | Standard error from the mean, A parameter                        |
+| RMSE          | Root-mean-square error                                           |
+| R2            | Goodness of fit                                                  |
+| Include       | Should this well be included in a the newly generated index file |
   
 Clicking on a well will show you the measured and modeled data in a graph:  
 ![use kreap data modeling 1](img/use_kreap_data_modeling5.png)  

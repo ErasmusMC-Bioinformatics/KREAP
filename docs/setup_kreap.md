@@ -13,7 +13,7 @@ Unpack the zip with an archiving tool, 7-zip is used here, but use what ever is 
 
 ### [](#header-3)Mac
 
-Unpack the zip \<---------------the mac way-------------------\>:  
+Unpack the zip by double clicking it:  
 ![setup kreap mac](img/setup_kreap_unpack_mac.png)  
 
 ### [](#header-3)Linux

@@ -1,6 +1,6 @@
 # [](#header-1)Errors in the modeling result
 
-It is possible that some of the wells couldn't be modeled \<----- reason why maybe? -------\>:  
+It is possible that some of the wells couldn't be modeled:  
 ![use kreap model error 1](img/use_kreap_model_error1.png)  
 
 When this happens, we've provided an easy way to exclude these wells from the modeling process.  
