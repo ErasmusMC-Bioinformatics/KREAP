@@ -1,30 +1,26 @@
 # [](#header-1)Download Virtual Box
 
-Download [Oracle Virtual Box](http://download.virtualbox.org/virtualbox/5.1.26/VirtualBox-5.1.26-117224-Win.exe) for mac.
+Download [Oracle Virtual Box](http://download.virtualbox.org/virtualbox/5.1.26/VirtualBox-5.1.26-117224-OSX.dmg) for mac.
 
 ## [](#header-2)Install Virtual Box
 
-Click "Next" on the first windows:
-![virtual box setup 1](img/virtual_box_windows1.png)  
+Open the downloaded file:
+![virtual mac setup 2](img/virtual_box_mac2.png)  
   
-The defaults on the next page are fine most of the time but can be changed if necessary.  
-Click "Next" again:  
-![virtual box setup 1](img/virtual_box_windows2.png)  
+Double clicking the "Virtualbox.pkg" icon will start the installation:
+![virtual mac setup 3](img/virtual_box_mac3.png)  
   
-Select the features you want to enable and click "Next":  
-![virtual box setup 1](img/virtual_box_windows3.png)  
+Confirm that you want to install VirtualBox by clicking on "Continue":
+![virtual mac setup 4](img/virtual_box_mac4.png)  
   
-During the installation your internet connection will be disconnected briefly, make sure you don't have any running downloads and click "Yes":
-![virtual box setup 1](img/virtual_box_windows4.png)  
+VirtualBox will now be installed:
+![virtual mac setup 5](img/virtual_box_mac5.png)  
   
-Click "Install":  
-![virtual box setup 1](img/virtual_box_windows5.png) 
-  
-During installation, you will be prompted to install additional drivers, click "Install" to continue:
-![virtual box setup 1](img/virtual_box_windows6.png)  
+Click on "Close" to quit the installer when the installation is succesful:
+![virtual mac setup 6](img/virtual_box_mac6.png)  
 
-Click on "Finish" to complete the installation process:  
-![virtual box setup 1](img/virtual_box_windows7.png)  
+You can now find VirtualBox with the rest of your installed applications:  
+![virtual mac setup 7](img/virtual_box_mac7.png)  
 
 ### [](#header-3)Setup KREAP
 
