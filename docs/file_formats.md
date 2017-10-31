@@ -38,6 +38,12 @@ Any other program that can output tabular files should also work (including any 
   
 It's possible to create zip and index file that contain multiple plates by using extra directories in the zip and index file:  
 ![file formats index note](img/file_formats_index_note.png)  
+
+## [](#header-2)Example
+
+We have prepared a plate zip and index file that can directly be used with KREAP or can be used as a template for your own data:  
+[Plate Zip](https://bioinf-galaxian.erasmusmc.nl/owncloud/index.php/s/48qF0Kjlsr6xe8U/download)  
+[Plate Index](https://bioinf-galaxian.erasmusmc.nl/owncloud/index.php/s/FHzAgGGXRzzh9uC/download)
   
 # [](#header-1)Analyse your data with KREAP  
   
