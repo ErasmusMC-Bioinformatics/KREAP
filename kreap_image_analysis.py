@@ -43,7 +43,7 @@ def main():
     tool_dir = os.path.dirname(os.path.realpath(__file__))
 
     logging.info("Running Cellprofiler")
-    pipeline_template_file = os.path.join(tool_dir, "pipeline_template3.cppipe")
+    pipeline_template_file = os.path.join(tool_dir, "pipeline_template.cppipe")
     plate.run_cellprofiler(pipeline_template_file, docker=True)
 
     logging.info("Finding the gaps")
