@@ -23,7 +23,7 @@ def main():
 
     output_dir = args.out_dir
 
-    logging.basicConfig(filename=args.out_html, level=logging.INFO, format="%(asctime)s:&emsp;%(message)s <br />", datefmt='%Y/%m/%d %H:%M:%S')
+    logging.basicConfig(filename=args.out_html, level=logging.DEBUG, format="%(asctime)s:&emsp;%(message)s <br />", datefmt='%Y/%m/%d %H:%M:%S')
     logging.getLogger().addHandler(logging.StreamHandler(sys.stdout)) # also log to stdout
     logging.info("Started KREAP")
 

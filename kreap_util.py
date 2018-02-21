@@ -86,7 +86,7 @@ def unzip_to(zip_file, unzip_path):
     return p
 
 def execute_cellprofiler(well, pipeline, output_dir, file_list, docker=False):
-    command = ["cellprofiler", "--do-not-fetch", "-c", "-r", "--pipeline={0}".format(pipeline), "-o", output_dir, "--file-list", file_list]
+    command = ["cellprofiler", "--run-headless", "--do-not-fetch", "-c", "-r", "--pipeline={0}".format(pipeline), "-o", output_dir, "--file-list={0}".format(file_list)]
     if docker:
         command = ["docker", "run", "-v", "{0}:/well_dir/".format(output_dir), "cellprofiler/cellprofiler:2.2", "-c", "-r", "--pipeline=/well_dir/well_pipeline.cppipe", "-o", "/well_dir/", "--file-list", "/well_dir/filelist.txt"]
     print " ".join(command)

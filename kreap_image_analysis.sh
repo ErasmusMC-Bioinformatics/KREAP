@@ -5,4 +5,4 @@ output_dir=$4
 
 dir="$(cd "$(dirname "$0")" && pwd)"
 
-/media/galaxy/data/anaconda/anaconda2/bin/python $dir/kreap_image_analysis.py --index-file "${index}" --plate-zip "${zip}" --out-html "${output}" --out-dir "${output_dir}"
+python $dir/kreap_image_analysis.py --index-file "${index}" --plate-zip "${zip}" --out-html "${output}" --out-dir "${output_dir}"
