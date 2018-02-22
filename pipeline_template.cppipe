@@ -55,7 +55,7 @@ CorrectIlluminationCalculate:[module_num:5|svn_version:\'Unknown\'|variable_revi
     Select how the illumination function is calculated:Background
     Dilate objects in the final averaged image?:No
     Dilation radius:1
-    Block size:$pixel_block_size
+    Block size:{{ pixel_block_size }}
     Rescale the illumination function?:No
     Calculate function for each image individually, or based on all images?:Each
     Smoothing method:Gaussian Filter
