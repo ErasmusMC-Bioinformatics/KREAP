@@ -42,8 +42,9 @@ It's possible to create zip and index file that contain multiple plates by using
 ## [](#header-2)Example
 
 We have prepared a plate zip and index file that can directly be used with KREAP or can be used as a template for your own data:  
-[Plate Zip](https://bioinf-galaxian.erasmusmc.nl/owncloud/index.php/s/48qF0Kjlsr6xe8U/download)  
-[Plate Index](https://bioinf-galaxian.erasmusmc.nl/owncloud/index.php/s/FHzAgGGXRzzh9uC/download)
+[Sample Zip](https://bioinf-galaxian.erasmusmc.nl/owncloud/index.php/s/Fsr313woWq9e6cz/download)  
+[Hoechst Plate Index](https://bioinf-galaxian.erasmusmc.nl/owncloud/index.php/s/wqy3ee2XjB6UpLk/download)
+[CellTracker Plate Index](https://bioinf-galaxian.erasmusmc.nl/owncloud/index.php/s/bpMcnQdfoABFsCJ/download)
   
 # [](#header-1)Analyse your data with KREAP  
   
