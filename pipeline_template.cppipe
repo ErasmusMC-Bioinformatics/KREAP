@@ -2,7 +2,7 @@ CellProfiler Pipeline: http://www.cellprofiler.org
 Version:3
 DateRevision:20160503134940
 GitHash:29342ff
-ModuleCount:12
+ModuleCount:13
 HasImagePlaneDetails:False
 
 Images:[module_num:1|svn_version:\'Unknown\'|variable_revision_number:2|show_window:False|notes:\x5B\'To begin creating your project, use the Images module to compile a list of files and/or folders that you want to analyze. You can also specify a set of rules to include only the desired files in your selected folders.\', \'---\', \'Settings converted from legacy pipeline.\'\x5D|batch_state:array(\x5B\x5D, dtype=uint8)|enabled:True|wants_pause:False]
@@ -80,7 +80,19 @@ CorrectIlluminationApply:[module_num:6|svn_version:\'Unknown\'|variable_revision
     Select the illumination function:IllumBlue
     Select how the illumination function is applied:Subtract
 
-IdentifyPrimaryObjects:[module_num:7|svn_version:\'Unknown\'|variable_revision_number:10|show_window:True|notes:\x5B\x5D|batch_state:array(\x5B\x5D, dtype=uint8)|enabled:True|wants_pause:False]
+FlipAndRotate:[module_num:7|svn_version:\'Unknown\'|variable_revision_number:2|show_window:True|notes:\x5B\x5D|batch_state:array(\x5B\x5D, dtype=uint8)|enabled:True|wants_pause:False]
+    Select the input image:CorrBlue
+    Name the output image:CorrBlue
+    Select method to flip image:Do not flip
+    Select method to rotate image:Enter angle
+    Crop away the rotated edges?:Yes
+    Calculate rotation:Individually
+    Enter coordinates of the top or left pixel:0,0
+    Enter the coordinates of the bottom or right pixel:0,100
+    Select how the specified points should be aligned:horizontally
+    Enter angle of rotation:{{ rotate }}
+
+IdentifyPrimaryObjects:[module_num:8|svn_version:\'Unknown\'|variable_revision_number:10|show_window:True|notes:\x5B\x5D|batch_state:array(\x5B\x5D, dtype=uint8)|enabled:True|wants_pause:False]
     Select the input image:CorrBlue
     Name the primary objects to be identified:Nuclei
     Typical diameter of objects, in pixel units (Min,Max):{{ object_size_min }},{{ object_size_max }}
@@ -127,22 +139,22 @@ IdentifyPrimaryObjects:[module_num:7|svn_version:\'Unknown\'|variable_revision_n
     Variance method:Standard deviation
     # of deviations:2.0
 
-MeasureObjectIntensity:[module_num:8|svn_version:\'Unknown\'|variable_revision_number:3|show_window:True|notes:\x5B\x5D|batch_state:array(\x5B\x5D, dtype=uint8)|enabled:True|wants_pause:True]
+MeasureObjectIntensity:[module_num:9|svn_version:\'Unknown\'|variable_revision_number:3|show_window:True|notes:\x5B\x5D|batch_state:array(\x5B\x5D, dtype=uint8)|enabled:True|wants_pause:True]
     Hidden:1
     Select an image to measure:DNA
     Select objects to measure:Nuclei
 
-MeasureObjectSizeShape:[module_num:9|svn_version:\'Unknown\'|variable_revision_number:1|show_window:True|notes:\x5B\x5D|batch_state:array(\x5B\x5D, dtype=uint8)|enabled:True|wants_pause:False]
+MeasureObjectSizeShape:[module_num:10|svn_version:\'Unknown\'|variable_revision_number:1|show_window:True|notes:\x5B\x5D|batch_state:array(\x5B\x5D, dtype=uint8)|enabled:True|wants_pause:False]
     Select objects to measure:Nuclei
     Calculate the Zernike features?:No
 
-ConvertObjectsToImage:[module_num:10|svn_version:\'Unknown\'|variable_revision_number:1|show_window:True|notes:\x5B\x5D|batch_state:array(\x5B\x5D, dtype=uint8)|enabled:True|wants_pause:False]
+ConvertObjectsToImage:[module_num:11|svn_version:\'Unknown\'|variable_revision_number:1|show_window:True|notes:\x5B\x5D|batch_state:array(\x5B\x5D, dtype=uint8)|enabled:True|wants_pause:False]
     Select the input objects:Nuclei
     Name the output image:Nuclei
     Select the color format:uint16
     Select the colormap:Default
 
-ExportToSpreadsheet:[module_num:11|svn_version:\'Unknown\'|variable_revision_number:11|show_window:True|notes:\x5B\x5D|batch_state:array(\x5B\x5D, dtype=uint8)|enabled:True|wants_pause:False]
+ExportToSpreadsheet:[module_num:12|svn_version:\'Unknown\'|variable_revision_number:11|show_window:True|notes:\x5B\x5D|batch_state:array(\x5B\x5D, dtype=uint8)|enabled:True|wants_pause:False]
     Select the column delimiter:Tab
     Add image metadata columns to your object data file?:No
     Limit output to a size that is allowed in Excel?:No
@@ -166,7 +178,7 @@ ExportToSpreadsheet:[module_num:11|svn_version:\'Unknown\'|variable_revision_num
     File name:Nuclei_data.txt
     Use the object name for the file name?:No
 
-SaveImages:[module_num:12|svn_version:\'Unknown\'|variable_revision_number:11|show_window:True|notes:\x5B\x5D|batch_state:array(\x5B\x5D, dtype=uint8)|enabled:True|wants_pause:False]
+SaveImages:[module_num:13|svn_version:\'Unknown\'|variable_revision_number:11|show_window:True|notes:\x5B\x5D|batch_state:array(\x5B\x5D, dtype=uint8)|enabled:True|wants_pause:False]
     Select the type of image to save:Image
     Select the image to save:CorrBlue
     Select the objects to save:None

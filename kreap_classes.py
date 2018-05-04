@@ -21,6 +21,7 @@ class Well(object):
         self.object_size_min = int(values['object_size_min'])
         self.object_size_max = int(values['object_size_max'])
         self.time_interval = int(values["time_interval"])
+        self.rotate = float(values["rotate"]) if "rotate" in values else 10.0
 
         self.files = [] #full path to the image
         self.file_names = [] #just the file names
@@ -68,6 +69,7 @@ class Well(object):
                 "pixel_block_size": self.pixel_block_size, 
                 "object_size_min": self.object_size_min, 
                 "object_size_max": self.object_size_max,
+                "rotate": self.rotate,
                 "well_path": "/well_dir/" if docker else well_path
             }
             kreap_util.write_jinja_template(pipeline_template, well_pipeline_path, context)
