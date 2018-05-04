@@ -21,7 +21,7 @@ class Well(object):
         self.object_size_min = int(values['object_size_min'])
         self.object_size_max = int(values['object_size_max'])
         self.time_interval = int(values["time_interval"])
-        self.rotate = float(values["rotate"]) if "rotate" in values else 10.0
+        self.rotate = float(values["rotate"]) if "rotate" in values else 0
 
         self.files = [] #full path to the image
         self.file_names = [] #just the file names
