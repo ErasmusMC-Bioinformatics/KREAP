@@ -27,6 +27,7 @@ The index file has the following structure:
 | object_size_min  | The minimum object size (in pixels)                                       |
 | object_size_max  | The maximum object size (in pixels)                                       |
 | time_interval    | The time (in minutes) between images                                      |
+| rotate           | The images will be rotated (clockwise) by this many degrees (optional)    |
   
 Here is the index file associated with the zip created in the previous section:  
 ![file formats index](img/file_formats_index.png)  
