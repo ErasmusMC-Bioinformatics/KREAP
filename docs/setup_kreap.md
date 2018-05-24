@@ -1,6 +1,6 @@
 # [](#header-1)Download the KREAP VM
 
-Download the [KREAP](https://bioinf-galaxian.erasmusmc.nl/owncloud/index.php/s/orwOcp2gigftAtw/download) VM.
+Download the [KREAP](https://bioinf-galaxian.erasmusmc.nl/owncloud/index.php/s/CLnWCAxXqhUeGQS/download) VM.
 
 ## [](#header-2)Extract the zip
 
