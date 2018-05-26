@@ -4,7 +4,7 @@ Kinetic Re-Epithelialization Analysis Pipeline
 
 ## [](#header-2)Getting Started
 
-Download the VM from [here](https://bioinf-galaxian.erasmusmc.nl/owncloud/index.php/s/CLnWCAxXqhUeGQS/download).  
+Download the VM from [here](https://bioinf-galaxian.erasmusmc.nl/owncloud/index.php/s/M6nqgYRsXVsk010/download) (OVA format) or [here](https://bioinf-galaxian.erasmusmc.nl/owncloud/index.php/s/bDILN5CuolyfYgP/download) (VMDK format).  
 Set up Oracle [VirtualBox](https://www.virtualbox.org/) (Help: [Windows](virtual_box_setup_windows), [Mac](virtual_box_setup_mac))
 
 ## [](#header-3)Import the KREAP VM
